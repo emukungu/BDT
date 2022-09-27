@@ -1,0 +1,16 @@
+/*COMMANDS*/
+
+/* Running zookeeper */
+~./bin/zookeeper-server-start.sh config/zookeeper.properties
+
+/* Running Kafka broker */
+~./bin/kafka-server-start.sh config/server.properties
+
+/* Creating kafka topic */
+~./bin/kafka-topics.sh --create --topic twitter-kafka --bootstrap-server localhost:9092
+
+/* Running kafka console producer */
+~./bin/kafka-console-producer.sh --topic twitter-kafka --bootstrap-server localhost:9092
+
+/* Running kafka console consumer */
+~./bin/kafka-console-consumer.sh --topic twitter-kafka --from-beginning --bootstrap-server localhost:9092
